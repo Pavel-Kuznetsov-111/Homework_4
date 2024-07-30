@@ -19,11 +19,10 @@ public class Main {
             System.out.println("Если возраст человека равен " + age2 + ", то он не достиг совершеннолетия, нужно немного подождать");
         }
 
-        int temperatura = 5;
+        int temperatura = 6;
         if (temperatura <= 5) {
             System.out.println("На улице ниже " + temperatura + " градусов, нужно надеть шапку");
-        }
-        if (temperatura >= 5) {
+        } else {
             System.out.println("На улице выше " + temperatura + " градусов, можно идти без шапки");
         }
 
@@ -63,27 +62,28 @@ public class Main {
 
         int sittingPlace = 60;
         int standingPlace = 42;
-        int totalPlace = sittingPlace + standingPlace;
-        int busySittingPlace = 60;
-        int busyStandingPlace = 42;
+        int busySittingPlace = 58;
+        int busyStandingPlace = 40;
+        int totalPlace = busySittingPlace + busyStandingPlace;
         int freeSittingPlace = sittingPlace - busySittingPlace;
         int freeStandingPlace = standingPlace - busyStandingPlace;
-        if (busySittingPlace >= 1 && busySittingPlace <= 60) {
+        if (freeSittingPlace == sittingPlace - busySittingPlace) {
             System.out.println("Количество свободных сидячих мест в вагоне составляет " + freeSittingPlace);
         }
-        if (busyStandingPlace >= 1 && busyStandingPlace <= 42) {
+        if (freeStandingPlace == standingPlace - busyStandingPlace) {
             System.out.println("Количество свободных стоячих мест в вагоне составляет " + freeStandingPlace);
-        } else if (totalPlace >= busySittingPlace + busyStandingPlace) {
-            System.out.println("К сожалению в вагоне нет свободных мест.");
         }
+        if (totalPlace >= 102) {
+            System.out.println("К сожалению свободных мест в вагоне нет");
+        }
+
         int one = 1;
         int two = 2;
         int three = 3;
-        boolean lagerNumber = three>two && one < two;
-        if (lagerNumber) {
-            System.out.println("Три больше двух");
-        } else if (lagerNumber) {
-            System.out.println("Один меньше двух");
+        if (three>two && two>one) {
+            System.out.println("Три больше двух и три больше одного");
+        } else if (three<two && three<one) {
+            System.out.println("Три меньше двух и меньше одного");
         }
 
 
